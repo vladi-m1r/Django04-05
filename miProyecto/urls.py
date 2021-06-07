@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path
 
 from inicio.views import viewHome
+from videojuegos.views import viewVideojuegos
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', viewHome, name="Home"),
+    path('videojuegos/', viewVideojuegos)
 ]
