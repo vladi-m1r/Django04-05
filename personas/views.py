@@ -7,12 +7,22 @@ from django.views.generic.list import (
     ListView,
 )
 from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView
 
 class PersonaListView(ListView):
     model = Persona
 
 class PersonaDetailView(DetailView):
     model = Persona
+
+class PersonaCreateView(CreateView):
+    model = Persona
+    fields = [
+        'nombre',
+        'apellidos',
+        'edad',
+        'donador',
+    ]
 
 def personasListView(request):
 

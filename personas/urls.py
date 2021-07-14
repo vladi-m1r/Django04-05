@@ -1,9 +1,10 @@
 from django.urls import path
-from personas.views import PersonaDetailView, PersonaListView, home, personaCreateView, personasAnotherCretateView, personasDeleteView, personasListView, personasShowObject
+from personas.views import PersonaCreateView, PersonaDetailView, PersonaListView, home, personaCreateView, personasAnotherCretateView, personasDeleteView, personasListView, personasShowObject
 
 
 app_name = 'personas'
 urlpatterns = [
+    path('create/', PersonaCreateView.as_view(), name= 'persona-create'),
     path('', PersonaListView.as_view(), name= 'persona-list'),
     path('<int:pk>', PersonaDetailView.as_view(), name= 'persona-detail'),
     path('anotherAdd', personasAnotherCretateView, name="OtroAgregarPersonas"),
