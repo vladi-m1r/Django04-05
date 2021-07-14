@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 {% for instance in objectList %}
-    <p>{{ instance.id }} - {{ instance.nombre }}</p>
+    <p>{{ instance.id }}</p>
+    <a href="{{ instance.get_absolute_url}}">
+        {{ instance.nombre }}
+    </a>
 {% endfor %}
 {% endblock %}
