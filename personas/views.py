@@ -2,6 +2,13 @@ from django.shortcuts import get_object_or_404, redirect, render
 from personas import forms
 from personas.models import Persona
 from .forms import RawPersonaForm, PersonaForm
+from django.views.generic.list import (
+    ListView,
+)
+
+class PersonaListView(ListView):
+    model = Persona
+
 
 def personasListView(request):
 
