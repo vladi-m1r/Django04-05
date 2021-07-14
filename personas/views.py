@@ -1,3 +1,4 @@
+from typing import List
 from django.shortcuts import get_object_or_404, redirect, render
 from personas import forms
 from personas.models import Persona
@@ -5,11 +6,13 @@ from .forms import RawPersonaForm, PersonaForm
 from django.views.generic.list import (
     ListView,
 )
+from django.views.generic.detail import DetailView
 
 class PersonaListView(ListView):
     model = Persona
-    queryset = Persona.objects.filter(edad__lte = '44')
 
+class PersonaDetailView(DetailView):
+    model = Persona
 
 def personasListView(request):
 
