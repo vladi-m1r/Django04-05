@@ -8,6 +8,7 @@ from django.views.generic.list import (
 
 class PersonaListView(ListView):
     model = Persona
+    queryset = Persona.objects.filter(edad__lte = '44')
 
 
 def personasListView(request):
