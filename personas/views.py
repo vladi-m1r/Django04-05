@@ -3,7 +3,16 @@ from personas import forms
 from personas.models import Persona
 from .forms import RawPersonaForm, PersonaForm
 
-# Create your views here.
+def personasListView(request):
+
+    querySet = Persona.objects.all()
+    context = {
+        'objectList': querySet,
+    }
+
+    return render(request, 'personasLista.html', context)
+
+
 def personasAnotherCretateView(request):
     form = RawPersonaForm()
 
