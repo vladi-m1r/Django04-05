@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from personas import forms
+from personas.models import Persona
 from .forms import RawPersonaForm
 
 # Create your views here.
@@ -10,6 +11,7 @@ def personasAnotherCretateView(request):
         form = RawPersonaForm(request.POST)
         if form.is_valid():
             print(form.cleaned_data)
+            Persona.objects.create(**form.cleaned_data)
         else:
             print(form.errors)
 
