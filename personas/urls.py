@@ -1,6 +1,7 @@
 from django.urls import path
 from personas.views import home, personaCreateView, personasAnotherCretateView, personasDeleteView, personasListView, personasShowObject
 
+app_name = 'personas'
 urlpatterns = [
     path('anotherAdd', personasAnotherCretateView, name="OtroAgregarPersonas"),
     path('addPersona', personaCreateView, name="agregarPersona"),
