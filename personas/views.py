@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from personas import forms
 from personas.models import Persona
 from .forms import RawPersonaForm, PersonaForm
@@ -41,7 +41,7 @@ def personaCreateView(request):
 
 # RUTEO DINAMICO
 def personasShowObject(request, myID):
-    obj = Persona.objects.get(id = myID)
+    obj = get_object_or_404(Persona, id = myID)
     context = {
         'objeto': obj,
     }
