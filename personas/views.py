@@ -38,3 +38,11 @@ def personaCreateView(request):
     }
 
     return render(request, 'personasCreate.html', context)
+
+# RUTEO DINAMICO
+def personasShowObject(request, myID):
+    obj = Persona.objects.get(id = myID)
+    context = {
+        'objeto': obj,
+    }
+    return render(request, 'descripcion.html', context)
