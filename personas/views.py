@@ -7,7 +7,12 @@ from django.views.generic.list import (
     ListView,
 )
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
+from django.urls import reverse_lazy
+
+class PersonaDeleteView(DeleteView):
+    model = Persona
+    success_url = reverse_lazy('personas:persona-list')
 
 class PersonaUpdateView(UpdateView):
     model = Persona
@@ -17,7 +22,7 @@ class PersonaUpdateView(UpdateView):
         'edad',
         'donador',
     ]
-    
+
 class PersonaListView(ListView):
     model = Persona
 

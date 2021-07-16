@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> Borrando Persona </h1>
+<h2> {{object.nombre}} / {{object.apellidos}}</h2>
+<form method="post">{% csrf_token %}
+    <p>Confime si desea borrar esta persona</p>
+    <input type="submit" value="Confirmar">
+</form>
+{% endblock %}
