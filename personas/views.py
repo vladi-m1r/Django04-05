@@ -1,4 +1,5 @@
 from typing import List
+from django.http.response import JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from personas import forms
 from personas.models import Persona
@@ -10,11 +11,12 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
 from django.views import View
-from django.http import HttpResponse
 
 class PersonaQueryView(View):
     def get(self, request, *args, **kwargs):
-        return HttpResponse("Hola mundo con Clases")
+        queryset = Persona.objects.all()
+        return JsonResponse(list(queryset.values()), safe=False)
+
 class PersonaDeleteView(DeleteView):
     model = Persona
     success_url = reverse_lazy('personas:persona-list')
