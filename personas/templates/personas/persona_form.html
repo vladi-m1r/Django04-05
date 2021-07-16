@@ -3,9 +3,15 @@
     Nueva Persona
 {% endblock %}
 {% block content %}
-<h1>Nueva persona</h1>
+
+<div class="contenedor">
 <form action="" method="post">{% csrf_token %}
+    <h1>Nueva persona</h1>
+    <hr>
     {{ form.as_p }}
-    <input type="submit" value="Save">
+    <div class="enviar">
+        <input type="submit" value="Save">
+    </div>
 </form>
+</div>
 {% endblock %}

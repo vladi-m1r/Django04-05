@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+body{
+    background-color: rgba(236, 241, 247, 0.775);
+    color: black;
+    font-family: 'Work Sans', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: turquoise;
+}
+
+a:hover{
+    background-color: greenyellow;
+}
+
+h1{
+    color: black;
+}
+
+.contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    border-radius: 5px;
+    padding: 25px;
+    background-color: rgb(255, 255, 255);
+    border-width: 2px;
+    border-style: groove;
+}
+
+.enviar{
+   text-align: center;
+}
+
+.enviar input{
+    background-color: rgb(52, 218, 121);
+    border-width: 0;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.enviar input:hover{
+    background-color: rgb(48, 179, 103);
+}
+
