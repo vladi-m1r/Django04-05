@@ -1,8 +1,0 @@
-{% extends 'plantillabase.html' %}
-{% block content %}
-{% for element in videojuegos%}
-    <h3>{{element.nombre}}</h3>
-    <img src="{{element.imagen}}" alt="">
-    <p>{{element.descripcion}}</p>
-{% endfor %}
-{% endblock %}
